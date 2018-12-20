@@ -6,6 +6,8 @@
   <li>Option to add link to banner</li>
   <li>Change background and text color to preset value</li>
   <li>Display date of last banner update</li>
+  <li>Tasteful animations</li>
+  <li>Impress all your visitor with a really nice banner</li>
 </ul>
 
 <h2>How to use</h2>
