@@ -68,8 +68,42 @@
 						<h2><span><?php esc_attr_e(
 									'Banner Colors', 'WpAdminStyle'
 								); ?></span></h2>
-						<div class="inside">
-                                color pickers will go here
+						<div style="padding:5px;">
+						<form action="" method='post'>
+						<div style='display: grid;grid-template-columns: 1fr 1fr;grid-gap: 25px;'>
+							<div>
+								<p><strong>Background Color</strong></p><hr>
+								<table style="width:100%;">
+								<?php foreach ($banner_colors as $color) { ?>
+									<tr>
+										<td style='background-image:linear-gradient(90deg, white, white, <?=$color;?>);' >
+										<label title='g:i a'>
+											<input <?php if($promo_banner_set_colors['background-color'] == $color){echo 'checked="true"';}?> type="radio" name="banner-background" value="<?=$color;?>" />
+											<span><?php echo $color; ?></span>
+										</label>
+										</td>
+									</tr>
+								<?php } ?>
+								</table>
+							</div>
+							<div>
+								<p><strong>Text Color</strong></p><hr>
+								<table style="width:100%;">
+								<?php foreach ($banner_colors as $color) { ?>
+									<tr>
+										<td style='background-image:linear-gradient(90deg, white, white, <?=$color;?>);'>
+										<label title='g:i a'>
+											<input <?php if($promo_banner_set_colors['text-color'] == $color){echo 'checked="true"';}?> type="radio" name="text-color" value="<?=$color;?>" />
+											<span><?php echo $color; ?></span>
+										</label>
+										</td>
+									</tr>
+								<?php } ?>
+								</table>
+							</div>
+						</div>
+						<button style='margin-top:15px;'class="button-primary" type="submit" value="submit">Save Color Settings</button>
+						</form>
 						</div>
 						<!-- .inside -->
 					</div>
