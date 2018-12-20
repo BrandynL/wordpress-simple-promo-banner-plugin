@@ -1,5 +1,4 @@
-# wordpress-clean-promo-banner-plugin
-<p>The most clean and simple banner for Wordpress, in the world.</p>
+# The most clean and simple banner for Wordpress, in the world.
 <p>Make a clean, simple promotion banner in less than 10 seconds.</p>
 <hr>
 <p>Features</p>
