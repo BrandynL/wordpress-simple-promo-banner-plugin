@@ -1,12 +1,15 @@
 # wordpress-clean-promo-banner-plugin
-<h1>The most clean and simple banner for Wordpress, in the world.</h1>
+The most clean and simple banner for Wordpress, in the world.
 
 <h2>How to use</h2>
-- Install the plugin
-- Set Promo banner heading
-- Optionally set promo text and add a link to the banner
-- Save banner text
-
-- Choose Banner Coor
-- Choose text Color
-- Save banner colors
+<ul>
+<li>Install the plugin</li>
+<li>Set Promo banner heading</li>
+<li>Optionally set promo text and add a link to the banner</li>
+<li>Save banner text</li>
+</ul>
+<ul>
+<li>Choose Banner Coor</li>
+<li>Choose text Color</li>
+<li>Save banner colors</li>
+</ul>
