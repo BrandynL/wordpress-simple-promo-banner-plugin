@@ -91,10 +91,5 @@ function clean_promo_banner_styles(){
     wp_register_style( 'clean_banner_styles', plugins_url( 'clean-promo-banner/css/clean-promo-banner-styles.css' ));
     wp_enqueue_style('clean_banner_styles');
 }
-add_action('admin_enqueue_scripts', 'clean_promo_banner_scripts');
-function clean_promo_banner_scripts(){
-    wp_register_script( 'clean_banner_scripts', plugins_url( 'clean-promo-banner/js/clean-promo-banner-scripts.js' ));
-    wp_enqueue_script('clean_banner_scripts');
-}
 
 
