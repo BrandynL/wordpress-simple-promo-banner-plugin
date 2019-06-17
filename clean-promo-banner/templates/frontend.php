@@ -1,11 +1,11 @@
-<div id='clean-promo-banner'<?php if (isset($promo_banner_set_colors['background-color'])){echo "style='background:".$promo_banner_set_colors['background-color'].";'";}?>>
+<div id='clean-promo-banner'<?php if (isset($promo_banner_options['background-color'])){echo "style='background:".$promo_banner_options['background-color'].";'";}?>>
 <?php if ($promo_banner_options['promo-banner-link']) : ?>
     <a class='promo-link' href="<?php echo $promo_banner_options['promo-banner-link']; ?>">
 <?php endif; ?>
-    <h1 <?php if (isset($promo_banner_set_colors['text-color'])){echo "style='color:".$promo_banner_set_colors['text-color'].";'";}?>><?php echo $promo_banner_options['promo-banner-title'];?></h1>
+    <h1 <?php if (isset($promo_banner_options['text-color'])){echo "style='color:".$promo_banner_options['text-color'].";'";}?>><?php echo $promo_banner_options['promo-banner-title'];?></h1>
     <div id='promo-details'>
         <?php if ($promo_banner_options['promo-banner-text']) : ?>
-            <p <?php if (isset($promo_banner_set_colors['text-color'])){echo "style='color:".$promo_banner_set_colors['text-color'].";'";}?>'><?php echo $promo_banner_options['promo-banner-text']; ?></p>
+            <p <?php if (isset($promo_banner_options['text-color'])){echo "style='color:".$promo_banner_options['text-color'].";'";}?>'><?php echo $promo_banner_options['promo-banner-text']; ?></p>
         <?php endif; ?>
 
     </div>

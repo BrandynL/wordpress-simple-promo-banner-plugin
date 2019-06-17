@@ -1,120 +1,94 @@
-<div class="wrap">
-	<div id="icon-options-general" class="icon32"></div>
+<?php $promo_banner_options = get_option('clean-promo-banner', true); ?>
+<div class="promo-banner-wrap">
 	<h1><?php esc_attr_e( 'Clean Promo Banner', 'WpAdminStyle' ); ?></h1>
-	<p><?php _e( 'The most clean and simple banner for Wordpress, in the world.', 'WpAdminStyle' ); ?></p>
+	<?php if ($promo_banner_options['last-updated']) {
+		echo "<p>Banner Last Updated : ".$promo_banner_options['last-updated']."</p>";
+	} ?>
 	<hr>
-	<div id="poststuff">
-		<div id="post-body" class="metabox-holder columns-2">
-			<!-- main content -->
-			<div id="post-body-content">
-				<div class="meta-box-sortables ui-sortable">
-					<div class="postbox">
-						<div class="inside">
-                            <form method='post' action=''>
-                            <table class="form-table">
-                                <tr valign="top">
-                                    <td scope="row">
-                                    <label for="promo-banner-title">Promo Heading</label><br>
-                                    <input required type="text" value="<?php echo $promo_banner_options['promo-banner-title']; ?>" name='promo-banner-title' class="large-text" />
-                                    </td>
-                                </tr>
-                                <tr valign="top">
-                                    <td scope="row">
-                                    <label for="promo-banner-text">Promo Banner Text (optional - leave blank to disable)</label><br>
-                                    <textarea id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo esc_attr($promo_banner_options['promo-banner-text']); ?></textarea><br>
-                                    </td>
-                                </tr>
-								<tr valign="top">
-									<td scopt='row'>
-									<label for="promo-banner-link">link? (optional - leave blank to disable)</label><br>
-										<input name="promo-banner-link" type="text" id="promo-banner-link" class="large-text" value='<?php echo $promo_banner_options['promo-banner-link']; ?>'/>
-									</label>
-									</td>
-								</tr>
-								<tr valign="top">
-									<td scopt='row'>
-									<label for="show-promo-banner">
-										<input name="show-promo-banner" type="checkbox" id="show-promo-banner" <?php if($promo_banner_options['show-promo-banner']){echo 'checked';}; ?> />
-										<span><?php esc_attr_e( 'Enable Promo Banner on Website', 'WpAdminStyle' ); ?></span>
-									</label>
-									</td>
-								</tr>
-							<input type="hidden" value='<?php echo date("m/d/Y");?>' name="updated">
-                                <tr valign="top">
-                                    <td scope="row">
-                                    <button class="button-primary" type="submit" value="submit">Save Banner Settings</button>
-                                </tr>
-                            </table>
-                            </form>
+	<form method='post' action=''>
+		<div class="form-inner">
+			<div>
+				<div>
+					<label for="start-date">Start Date</label>
+					<input type="date" value='<?= $promo_banner_options['start-date']; ?>' name="start-date" id="">
 
-                            <div>
-                            <p>Banner Last Updated : <?php echo $promo_banner_options['last-updated']; ?></p>
-                            </div>
-
-
-
-						</div>
-						<!-- .inside -->
-					</div>
-					<!-- .postbox -->
+					<label for="end-date">End Date</label>
+					<input type="date" value='<?= $promo_banner_options['end-date'] ?>' name="end-date" id="">
 				</div>
-				<!-- .meta-box-sortables .ui-sortable -->
-			</div>
-			<!-- post-body-content -->
-			<!-- sidebar -->
-			<div id="postbox-container-1" class="postbox-container">
-				<div class="meta-box-sortables">
-					<div class="postbox">
-						<h2><span><?php esc_attr_e(
-									'Banner Colors', 'WpAdminStyle'
-								); ?></span></h2>
-						<div style="padding:5px;">
-						<form action="" method='post'>
-						<div style='display: grid;grid-template-columns: 1fr 1fr;grid-gap: 25px;'>
-							<div>
-								<p><strong>Background Color</strong></p><hr>
-								<table style="width:100%;">
-								<?php foreach ($banner_colors as $color) { ?>
-									<tr>
-										<td style='background-image:linear-gradient(90deg, white, white, <?=$color;?>);' >
-										<label title='g:i a'>
-											<input <?php if($promo_banner_set_colors['background-color'] == $color){echo 'checked="true"';}?> type="radio" name="banner-background" value="<?=$color;?>" />
-											<span><?php echo $color; ?></span>
-										</label>
-										</td>
-									</tr>
-								<?php } ?>
-								</table>
-							</div>
-							<div>
-								<p><strong>Text Color</strong></p><hr>
-								<table style="width:100%;">
-								<?php foreach ($banner_colors as $color) { ?>
-									<tr>
-										<td style='background-image:linear-gradient(90deg, white, white, <?=$color;?>);'>
-										<label title='g:i a'>
-											<input <?php if($promo_banner_set_colors['text-color'] == $color){echo 'checked="true"';}?> type="radio" name="text-color" value="<?=$color;?>" />
-											<span><?php echo $color; ?></span>
-										</label>
-										</td>
-									</tr>
-								<?php } ?>
-								</table>
-							</div>
-						</div>
-						<button style='margin-top:15px;'class="button-primary" type="submit" value="submit">Save Color Settings</button>
-						</form>
-						</div>
-						<!-- .inside -->
-					</div>
-					<!-- .postbox -->
+				<div>
+					<label for="promo-banner-title">Promo Heading *</label>
+					<input required type="text" value="<?php echo $promo_banner_options['promo-banner-title']; ?>" name='promo-banner-title' class="large-text" />
 				</div>
-				<!-- .meta-box-sortables -->
+				<div>
+					<label for="promo-banner-text">Promo Banner Text</label>
+					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo esc_attr($promo_banner_options['promo-banner-text']); ?></textarea>
+				</div>
+				<div>
+					<label for="promo-banner-link">Banner Link</label>
+					<input placeholder='optional' name="promo-banner-link" type="text" id="promo-banner-link" class="large-text" value='<?php echo $promo_banner_options['promo-banner-link']; ?>'/>
+				</div>
 			</div>
-			<!-- #postbox-container-1 .postbox-container -->
+			<div class='available-colors'>
+				<div>
+					<p>Background Color</p>
+					<?php foreach($available_colors as $color){
+						$selected_background = $promo_banner_options['background-color'] == $color ? "checked" : "";
+						echo "<input $selected_background name='background-color' type='radio' value='$color' style='background:$color'/>";
+					} ?>
+				</div>
+				<div>
+					<p>Text Color</p>
+					<?php foreach($available_colors as $color){
+						$selected_text = $promo_banner_options['text-color'] == $color ? "checked" : "";
+						echo "<input $selected_text name='text-color' type='radio' value='$color' style='background:$color'/>";
+					} ?>
+				</div>
+				<input type="hidden" value='<?php echo date("m/d/Y");?>' name="updated">
+			</div>
 		</div>
-		<!-- #post-body .metabox-holder .columns-2 -->
-		<br class="clear">
-	</div>
-	<!-- #poststuff -->
-</div> <!-- .wrap -->
+		<input style='display:block;margin-top:15px;'class="button-primary" type="submit" value="Save Settings">
+	</form>
+</div>
+<style>
+form label {
+    display: inline-block;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+.form-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 15px;
+}
+.form-inner input {
+    padding: 7px 12px;
+}
+.available-colors {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.available-colors > div {
+    border: 1px solid #8e8e8e1a;
+    padding: 8px;
+    margin: 10px auto;
+    background: white;
+}
+.available-colors input {
+    border-radius: 0px;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+	border: 0;
+	transition: transform .4s;
+}
+.available-colors input:hover{
+	transition: transform .4s;
+}
+.available-colors input:checked {
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 30px #00000085;
+    color: white;
+    transform: scale(1.1) rotate(45deg);
+}
+</style>
