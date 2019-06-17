@@ -65,7 +65,6 @@ add_action('get_header', 'display_clean_promo_banner');
 function display_clean_promo_banner(){
     $promo_banner_options = get_option('clean-promo-banner', true);
     if (trim($promo_banner_options['start-date']) != '' || $promo_banner_options['start-date'] == null){ // start date not set, continue to display...
-        echo 'asdf';
         //check start date is in the past and end date is in the future
         if( strtotime(str_replace(['-', '/'], '', $promo_banner_options['start-date'])) <= strtotime(Date('Ymd'))) { // start is today or before today
             if (
