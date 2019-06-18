@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name:  simple Promo Banner
+Plugin Name:  Simple Promo Banner
 Description:  An incredibly simple and clean banner that works on all wordpress sites
 Version:      1.0
 Author:       Brandyn Lordi
-Author URI:   https://github.com/BrandynL
+Author URI:   https://the-dev.ninja
 License:      MIT
 License URI:  https://opensource.org/licenses/MIT
 */
