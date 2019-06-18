@@ -4,7 +4,17 @@
 	<?php if ($promo_banner_options['last-updated']) {
 		echo "<p>Banner Last Updated : ".$promo_banner_options['last-updated']."</p>";
 	} ?>
-	<hr>
+	<?php $cursor_style = (!empty($promo_banner_options['promo-banner-link']) && trim($promo_banner_options['promo-banner-link'], ' ') != '') ? 'pointer' : 'default'; var_dump($cursor_style);?>
+	<div id="simple-preview-banner" style="
+			background:<?= $promo_banner_options['background-color']; ?>;
+			cursor:<?= $cursor_style; ?>;
+		"
+		
+		data-link="<?= $promo_banner_options['promo-banner-link']; ?>">
+		<h1 style="color:<?= $promo_banner_options['text-color']; ?>;"><?= $promo_banner_options['promo-banner-title'];?></h1>
+		<p style="color:<?= $promo_banner_options['text-color']; ?>;"><?= $promo_banner_options['promo-banner-text']; ?></p>
+	</div>
+
 	<form method='post' action=''>
 		<div class="form-inner">
 			<div>
@@ -21,22 +31,27 @@
 				</div>
 				<div>
 					<label for="promo-banner-text">Promo Banner Text</label>
-					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo esc_attr($promo_banner_options['promo-banner-text']); ?></textarea>
+					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo $promo_banner_options['promo-banner-text']; ?></textarea>
 				</div>
 				<div>
 					<label for="promo-banner-link">Banner Link</label>
 					<input placeholder='optional' name="promo-banner-link" type="text" id="promo-banner-link" class="large-text" value='<?php echo $promo_banner_options['promo-banner-link']; ?>'/>
 				</div>
+				<div>
+					<label for="hide-promo-banner">Banner Visibility</label>
+					<input type="checkbox" name="hide-promo-banner" id="hide-promo-banner"
+					<?php if ($promo_banner_options['hide-promo-banner'] == true) echo 'checked'; ?> >
+				</div>
 			</div>
 			<div class='available-colors'>
-				<div>
+				<div id='available-background-colors'>
 					<p>Background Color</p>
 					<?php foreach($available_colors as $color){
 						$selected_background = $promo_banner_options['background-color'] == $color ? "checked" : "";
 						echo "<input $selected_background name='background-color' type='radio' value='$color' style='background:$color'/>";
 					} ?>
 				</div>
-				<div>
+				<div id='available-text-colors'>
 					<p>Text Color</p>
 					<?php foreach($available_colors as $color){
 						$selected_text = $promo_banner_options['text-color'] == $color ? "checked" : "";
@@ -49,46 +64,3 @@
 		<input style='display:block;margin-top:15px;'class="button-primary" type="submit" value="Save Settings">
 	</form>
 </div>
-<style>
-form label {
-    display: inline-block;
-    margin: 10px 0px;
-    font-weight: bold;
-}
-.form-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 15px;
-}
-.form-inner input {
-    padding: 7px 12px;
-}
-.available-colors {
-    display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-.available-colors > div {
-    border: 1px solid #8e8e8e1a;
-    padding: 8px;
-    margin: 10px auto;
-    background: white;
-}
-.available-colors input {
-    border-radius: 0px;
-    width: 30px;
-    height: 30px;
-    margin: 2px;
-	border: 0;
-	transition: transform .4s;
-}
-.available-colors input:hover{
-	transition: transform .4s;
-}
-.available-colors input:checked {
-    border: 2px solid #fff;
-    box-shadow: 0px 0px 30px #00000085;
-    color: white;
-    transform: scale(1.1) rotate(45deg);
-}
-</style>
