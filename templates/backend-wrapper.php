@@ -4,7 +4,7 @@
 	<?php if ($promo_banner_options['last-updated']) {
 		echo "<p>Banner Last Updated : ".$promo_banner_options['last-updated']."</p>";
 	} ?>
-	<?php $cursor_style = (!empty($promo_banner_options['promo-banner-link']) && trim($promo_banner_options['promo-banner-link'], ' ') != '') ? 'pointer' : 'default'; var_dump($cursor_style);?>
+	<?php $cursor_style = (!empty($promo_banner_options['promo-banner-link']) && trim($promo_banner_options['promo-banner-link'], ' ') != '') ? 'pointer' : 'default';?>
 	<div id="simple-preview-banner" style="
 			background:<?= $promo_banner_options['background-color']; ?>;
 			cursor:<?= $cursor_style; ?>;
