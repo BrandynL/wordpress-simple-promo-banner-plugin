@@ -1,3 +1,7 @@
+<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+	<div class="notice notice-success"><p>Banner updated!</p></div>
+<?php endif; ?>
+
 <?php $promo_banner_options = get_option('simple-promo-banner', true); ?>
 <div class="promo-banner-wrap">
 	<h1><?php esc_attr_e( 'Simple Promo Banner', 'WpAdminStyle' ); ?></h1>
@@ -11,8 +15,8 @@
 		"
 		
 		data-link="<?= $promo_banner_options['promo-banner-link']; ?>">
-		<h1 style="color:<?= $promo_banner_options['text-color']; ?>;"><?= $promo_banner_options['promo-banner-title'];?></h1>
-		<p style="color:<?= $promo_banner_options['text-color']; ?>;"><?= $promo_banner_options['promo-banner-text']; ?></p>
+		<h1 style="color:<?= $promo_banner_options['text-color']; ?>;"><?= stripslashes($promo_banner_options['promo-banner-title']);?></h1>
+		<p style="color:<?= $promo_banner_options['text-color']; ?>;"><?= stripslashes($promo_banner_options['promo-banner-text']); ?></p>
 	</div>
 
 	<form method='post' action=''>
@@ -27,11 +31,11 @@
 				</div>
 				<div>
 					<label for="promo-banner-title">Promo Heading *</label>
-					<input required type="text" value="<?php echo $promo_banner_options['promo-banner-title']; ?>" name='promo-banner-title' class="large-text" />
+					<input required type="text" value="<?php echo stripslashes($promo_banner_options['promo-banner-title']); ?>" name='promo-banner-title' class="large-text" />
 				</div>
 				<div>
 					<label for="promo-banner-text">Promo Banner Text</label>
-					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo $promo_banner_options['promo-banner-text']; ?></textarea>
+					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo stripslashes($promo_banner_options['promo-banner-text']); ?></textarea>
 				</div>
 				<div>
 					<label for="promo-banner-link">Banner Link</label>
