@@ -1,6 +1,6 @@
-<?php $promo_banner_options = get_option('clean-promo-banner', true); ?>
+<?php $promo_banner_options = get_option('simple-promo-banner', true); ?>
 <div class="promo-banner-wrap">
-	<h1><?php esc_attr_e( 'Clean Promo Banner', 'WpAdminStyle' ); ?></h1>
+	<h1><?php esc_attr_e( 'Simple Promo Banner', 'WpAdminStyle' ); ?></h1>
 	<?php if ($promo_banner_options['last-updated']) {
 		echo "<p>Banner Last Updated : ".$promo_banner_options['last-updated']."</p>";
 	} ?>

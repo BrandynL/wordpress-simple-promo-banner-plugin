@@ -3,24 +3,20 @@
 <hr>
 <p>Features</p>
 <ul>
+  <li>Set start date, end date, or both</li>
   <li>Option to add link to banner</li>
   <li>Change background and text color to preset value</li>
-  <li>Display date of last banner update</li>
   <li>Tasteful animations</li>
   <li>Impress all your visitors with a really nice banner</li>
 </ul>
 
 <h2>How to use</h2>
-<ul>
+<ol>
 <li>Install the plugin</li>
 <li>Set Promo banner heading</li>
 <li>Optionally set promo text and add a link to the banner</li>
-<li>Save banner text</li>
-</ul>
-<ul>
+<li>Set optional link</li>
 <li>Choose Banner Coor</li>
-<li>Choose text Color</li>
-<li>Save banner colors</li>
-</ul>
-
-</b>You must check the enable banner checkbox and hit save in order for the banner to display.</b>
+<li>Choose Text Color</li>
+<li>Save Settings</li>
+</ol>

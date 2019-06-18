@@ -1,4 +1,4 @@
-<div id='clean-promo-banner'<?php if (isset($promo_banner_options['background-color'])){echo "style='background:".$promo_banner_options['background-color'].";'";}?>>
+<div id='simple-promo-banner'<?php if (isset($promo_banner_options['background-color'])){echo "style='background:".$promo_banner_options['background-color'].";'";}?>>
 <?php if ($promo_banner_options['promo-banner-link']) : ?>
     <a class='promo-link' href="<?php echo $promo_banner_options['promo-banner-link']; ?>">
 <?php endif; ?>
