@@ -21,6 +21,15 @@
     transform: rotate(-15deg);
     border: 4px solid white;
 }
+#save-button{
+    display: block;
+    margin: 15px 0px;
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    text-align: center;
+    background: #3a6eb6;
+}
 #simple-preview-banner h1 {
     display: inline-block;
     text-transform:uppercase;

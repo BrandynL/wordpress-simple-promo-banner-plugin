@@ -42,6 +42,9 @@
 					<input type="checkbox" name="hide-promo-banner" id="hide-promo-banner"
 					<?php if ($promo_banner_options['hide-promo-banner'] == true) echo 'checked'; ?> >
 				</div>
+				<div>
+				<input id="save-button" type="submit" value="Save Settings">
+				</div>
 			</div>
 			<div class='available-colors'>
 				<div id='available-background-colors'>
@@ -61,6 +64,6 @@
 				<input type="hidden" value='<?php echo date("m/d/Y");?>' name="updated">
 			</div>
 		</div>
-		<input style='display:block;margin-top:15px;'class="button-primary" type="submit" value="Save Settings">
+		<!-- <input style='display:block;margin-top:15px;'class="button-primary" type="submit" value="Save Settings"> -->
 	</form>
 </div>

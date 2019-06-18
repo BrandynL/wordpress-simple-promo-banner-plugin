@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     // alert link on preview banner click
     simple_preview_banner.addEventListener('click', e => {
+        console.log(e)
         if ( e.target.getAttribute('data-link').trim() != '') {
             alert("Links to: " + e.target.getAttribute('data-link'))
         }
