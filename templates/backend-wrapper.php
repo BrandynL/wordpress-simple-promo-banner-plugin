@@ -34,7 +34,7 @@
 				</div>
 				<div>
 					<label for="promo-banner-text">Promo Banner Text</label>
-					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" class='large-text'><?php echo stripslashes($promo_banner_options['promo-banner-text']); ?></textarea>
+					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" style='resize:none;' class='large-text'><?php echo stripslashes($promo_banner_options['promo-banner-text']); ?></textarea>
 				</div>
 				<div>
 					<label for="promo-banner-link">Banner Link</label>
