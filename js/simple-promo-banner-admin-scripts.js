@@ -1,4 +1,18 @@
+showResetPreview = () => {
+    resetPreviewButton = document.getElementById('preview-reload')
+    resetPreviewButton.style.display='initial'
+    resetPreviewButton.style.opacity=1
+    resetPreviewButton.style.width='auto'
+    resetPreviewButton.style.height='auto'
+    resetPreviewButton.style.overflow='auto'
+    resetPreviewButton.style.bottom='-10px'
+    removeResetPreview() // kill this function once it happens
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+    removeResetPreview = () => {
+        showResetPreview = () => false;
+    } 
     // live preview in backend
     const simple_preview_banner = document.getElementById('simple-preview-banner') // wrapper div
     const title_text = document.querySelector('input[name="promo-banner-title"]') // title text
@@ -11,17 +25,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // live title text update event
     title_text.addEventListener('keyup', e => {
         simple_preview_banner.children['0'].innerText = e.target.value
+        showResetPreview()
     });
 
     // live description text update event
     desc_text.addEventListener('keyup', e =>{
         simple_preview_banner.children['1'].innerText =e.target.value
+        showResetPreview()
     })
 
     // live link update event
     banner_link.addEventListener('keyup', e =>{
         simple_preview_banner.setAttribute('data-link', e.target.value)
         simple_preview_banner.style.cursor = e.target.value.trim() == '' ? 'default' : 'pointer' // update cursor style if there is a link
+        showResetPreview()
     })
     // alert link on preview banner click
     simple_preview_banner.addEventListener('click', e => {
@@ -35,20 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // live background color update event
     background_colors.addEventListener('click', e =>{
         simple_preview_banner.style.background=e.target.style.background
+        showResetPreview()
     })
     // live text color update event
     text_colors.addEventListener('click', e =>{
         for (el of simple_preview_banner.children){
             el.style.color = e.target.style.background;
+            showResetPreview()
         }
     })
-    simple_preview_banner.addEventListener('transitionstart', ()=>{
-        resetPreviewButton = document.getElementById('preview-reload')
-        resetPreviewButton.style.display='initial'
-        resetPreviewButton.style.opacity=1
-        resetPreviewButton.style.width='auto'
-        resetPreviewButton.style.height='auto'
-        resetPreviewButton.style.overflow='auto'
-        resetPreviewButton.style.bottom='-10px'
-    }, true)
 });

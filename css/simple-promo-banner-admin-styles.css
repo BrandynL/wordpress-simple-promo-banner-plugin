@@ -32,7 +32,7 @@ button#preview-reload {
     border: none;
     padding: 7px 15px;
     background: #35669f;
-    color: white;
+    color: white!important;
     cursor:pointer;
     transition: all .6s;
     -webkit-transition: all .6s;
