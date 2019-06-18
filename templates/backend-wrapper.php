@@ -11,12 +11,11 @@
 	<?php $cursor_style = (!empty($promo_banner_options['promo-banner-link']) && trim($promo_banner_options['promo-banner-link'], ' ') != '') ? 'pointer' : 'default';?>
 	<div id="simple-preview-banner" style="
 			background:<?= $promo_banner_options['background-color']; ?>;
-			cursor:<?= $cursor_style; ?>;
-		"
-		
+			cursor:<?= $cursor_style; ?>;"
 		data-link="<?= $promo_banner_options['promo-banner-link']; ?>">
 		<h1 style="color:<?= $promo_banner_options['text-color']; ?>;"><?= stripslashes($promo_banner_options['promo-banner-title']);?></h1>
 		<p style="color:<?= $promo_banner_options['text-color']; ?>;"><?= stripslashes($promo_banner_options['promo-banner-text']); ?></p>
+		<button id='preview-reload' onClick="window.location.reload()" class="" style=''>Reset preview</button>
 	</div>
 
 	<form method='post' action=''>

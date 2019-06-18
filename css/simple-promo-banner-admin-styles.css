@@ -21,6 +21,25 @@
     transform: rotate(-15deg);
     border: 4px solid white;
 }
+button#preview-reload {
+    opacity:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+    position: absolute;
+    right: 10px;
+    bottom: 150px;
+    border: none;
+    padding: 7px 15px;
+    background: #35669f;
+    color: white;
+    cursor:pointer;
+    transition: all .6s;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    -o-transition: all .6s;
+}
 #save-button{
     display: block;
     margin: 15px 0px;
