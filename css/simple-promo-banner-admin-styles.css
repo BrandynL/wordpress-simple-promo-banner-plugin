@@ -29,6 +29,7 @@
     padding: 15px 45px;
     text-align: center;
     background: #3a6eb6;
+    cursor:pointer;
 }
 #simple-preview-banner h1 {
     display: inline-block;
@@ -93,7 +94,7 @@ input#hide-promo-banner:before,
 input#hide-promo-banner:checked:before {
     top: 0;
     left: 0;
-    width: 200px;
+    width: 100px;
     height: 35px;
     position: absolute;
     display: flex;
@@ -104,14 +105,13 @@ input#hide-promo-banner:checked:before {
     font-size: 12px;
     margin:0;
 }
-input#hide-promo-banner:before{content: 'Banner Showing';}
-input#hide-promo-banner:checked:before{content: 'Banner Hidden';}
+input#hide-promo-banner:before{content: 'Show';}
+input#hide-promo-banner:checked:before{content: 'Hide';}
 input#hide-promo-banner {
-    width: 200px;
+    width: 100px;
     height: 35px;
     display: block;
     border: none;
-    margin: 15px 0px;
     position: relative;
     background:limegreen;
 }

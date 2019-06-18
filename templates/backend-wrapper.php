@@ -43,7 +43,7 @@
 					<?php if ($promo_banner_options['hide-promo-banner'] == true) echo 'checked'; ?> >
 				</div>
 				<div>
-				<input id="save-button" type="submit" value="Save Settings">
+					<input id="save-button" type="submit" value="Save Settings">
 				</div>
 			</div>
 			<div class='available-colors'>
