@@ -65,4 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
             showResetPreview()
         }
     })
+
+    // show unsaved changes when  hide/display banner button click
+    document.getElementById('hide-promo-banner').addEventListener('change', () => {
+        document.getElementById('message').textContent = 'Unsaved Changes'
+    }, true);
 });
