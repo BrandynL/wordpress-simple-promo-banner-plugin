@@ -6,10 +6,14 @@ showResetPreview = () => {
     resetPreviewButton.style.height='auto'
     resetPreviewButton.style.overflow='auto'
     resetPreviewButton.style.bottom='-10px'
+    alertChanges() // tell user there are unssaved changes
     removeResetPreview() // kill this function once it happens
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    alertChanges = () => {
+        document.getElementById('message').textContent = 'Unsaved Changes'
+    }
     removeResetPreview = () => {
         showResetPreview = () => false;
     } 

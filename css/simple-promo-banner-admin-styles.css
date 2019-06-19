@@ -40,6 +40,10 @@ button#preview-reload {
     -ms-transition: all .6s;
     -o-transition: all .6s;
 }
+p#message {
+    color: red;
+    font-style: italic;
+}
 #save-button{
     display: block;
     margin: 15px 0px;
