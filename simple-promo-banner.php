@@ -88,14 +88,15 @@ function display_simple_promo_banner(){
 // plugin styles
 add_action('wp_enqueue_scripts', 'simple_promo_banner_scripts');
 function simple_promo_banner_scripts(){
-    wp_enqueue_style('simple_banner_styles', plugins_url( 'simple-promo-banner/css/simple-promo-banner-styles.css' ));
-    wp_enqueue_script('simple_banner_scripts', plugins_url( 'simple-promo-banner/js/simple-promo-banner-scripts.js'), array('jquery', 'jquery-ui-effects-bounce'));
+    wp_enqueue_style('simple_banner_styles', plugins_url( '/css/simple-promo-banner-styles.css',  __FILE__  ));
+    wp_enqueue_script('simple_banner_scripts', plugins_url( '/js/simple-promo-banner-scripts.js' , __FILE__  ), array('jquery', 'jquery-ui-effects-bounce'));
 }
 add_action( 'admin_enqueue_scripts', 'simple_promo_banner_admin_scripts' );
 function simple_promo_banner_admin_scripts($hook) {
     if($hook != 'settings_page_simple-promo-banner') {
         return;
     }
-    wp_enqueue_style( 'simple_banner_admin_styles', plugins_url( 'simple-promo-banner/css/simple-promo-banner-admin-styles.css' ));
-    wp_enqueue_script( 'simple_banner_admin_scripts', plugins_url( 'simple-promo-banner/js/simple-promo-banner-admin-scripts.js'));
+    // wp_enqueue_style( 'simple_banner_admin_styles', plugins_url( 'simple-promo-banner/css/simple-promo-banner-admin-styles.css' ));
+    wp_enqueue_style( 'simple_banner_admin_styles', plugins_url( '/css/simple-promo-banner-admin-styles.css', __FILE__ ));
+    wp_enqueue_script( 'simple_banner_admin_scripts', plugins_url( '/js/simple-promo-banner-admin-scripts.js', __FILE__ ));
 }
