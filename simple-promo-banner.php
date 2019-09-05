@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Simple Promo Banner
 Description:  An incredibly simple and clean banner that works on all wordpress sites
-Version:      1.0
+Version:      1.0.0
 Author:       Brandyn Lordi
 Author URI:   https://the-dev.ninja
 License:      MIT
