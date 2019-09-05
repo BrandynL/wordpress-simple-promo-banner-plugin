@@ -32,5 +32,9 @@ Check out the github repo at https://github.com/BrandynL/wordpress-simple-promo-
 
 == Changelog ==
 
+= 1.0.1 =
+* Minor bugfixes
+* Fix responsive font sizing
+
 = 1.0.0 =
 * Plugin Official Release
