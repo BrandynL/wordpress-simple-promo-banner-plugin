@@ -1,4 +1,5 @@
 # A clean and simple wordpress banner plugin
+<img src="screenshot.JPG">
 <p>Make a clean and simple promotion banner in less than 10 seconds.</p>
 <hr>
 <p>Features</p>
