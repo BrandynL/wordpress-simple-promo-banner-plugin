@@ -1,0 +1,19 @@
+{
+	"name": "Gravity Forms To PipelineDeals",
+	"version": "0.0.1",
+	"download_url": "https://digidev.io/product/gravity-forms-to-pipeline-deals/",
+
+	"homepage": "https://digidev.io/product/gravity-forms-to-pipeline-deals/",
+	"requires": "5.0",
+	"tested": "5.2.2",
+	"last_updated": "2017-01-01 16:17:00",
+	"upgrade_notice": "Added features and fixed bugs",
+
+	"author": "DigiDev",
+	"author_homepage": "https://digidev.io/",
+
+	"sections": {
+		"description": "Map Gravity form fields to fields in Pipeline Deals CRM. Requires Gravity forms to work.",
+		"changelog": "<p>Plugin Launch</p>",
+	}
+}

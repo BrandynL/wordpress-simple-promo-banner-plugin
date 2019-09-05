@@ -11,6 +11,13 @@ License URI:  https://opensource.org/licenses/MIT
 
 defined( 'ABSPATH' ) or die( 'DENIED!' );
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/BrandynL/wordpress-simple-promo-banner-plugin/',
+	__FILE__,
+	'simple-promo-banner.php'
+);
+
 add_action('admin_menu','simple_promo_banner_menu');
 function simple_promo_banner_menu(){
     add_options_page(
