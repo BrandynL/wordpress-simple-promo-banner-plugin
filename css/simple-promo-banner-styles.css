@@ -45,6 +45,6 @@
 #simple-promo-banner h1:after{display:none;}
 
 @media (max-width:768px){
-    #simple-promo-banner h1{font-size:18px;}
-    #simple-promo-banner p {font-size:14px;}
+    #simple-promo-banner h1{font-size:14px;}
+    #simple-promo-banner p {font-size:10px;}
 }
