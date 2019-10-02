@@ -7,7 +7,6 @@
         <?php if ($promo_banner_options['promo-banner-text']) : ?>
             <p <?php if (isset($promo_banner_options['text-color'])){echo "style='color:".$promo_banner_options['text-color'].";'";}?>'><?php echo $promo_banner_options['promo-banner-text']; ?></p>
         <?php endif; ?>
-
     </div>
 <?php if ($promo_banner_options['promo-banner-link']) : ?>
     </a>

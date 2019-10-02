@@ -37,8 +37,24 @@
 					<textarea placeholder='optional' id="" name="promo-banner-text" cols="80" rows="10" style='resize:none;' class='large-text'><?php echo stripslashes($promo_banner_options['promo-banner-text']); ?></textarea>
 				</div>
 				<div>
-					<label for="promo-banner-link">Banner Link</label>
+					<label for="promo-banner-link">Banner Links To:</label>
 					<input placeholder='optional' name="promo-banner-link" type="text" id="promo-banner-link" class="large-text" value='<?php echo $promo_banner_options['promo-banner-link']; ?>'/>
+				</div>
+				<div class="banner-exclusions-container">
+					<label class='banner-exclusions-container-label'>Page Visibility Exclusions <span>(click to expand/collapse)</span></label>
+					<div class="banner-exclusions-inner-wrapper closed">
+						<div class="exclusions-form-container">
+							<span id='add-exclusion'>Add New</span>
+							<?php
+							foreach ($promo_banner_options['excluded-urls'] as $key => $url) {
+								echo "<div class='inputExclusionContainer inputExclusion-$key'>";
+								echo "<input placeholder='Page URL equals or contains' required type='text' value='$url' class='banner-exclusion-url large-text' name='banner-exclusion-url-$key'/>";
+								echo "<span class='exclusion-input-delete-button' id='$key'>Delete</span>";
+								echo "</div>";
+							}
+							?>
+						</div>
+					</div>
 				</div>
 				<div>
 					<label for="hide-promo-banner">Banner Visibility</label>

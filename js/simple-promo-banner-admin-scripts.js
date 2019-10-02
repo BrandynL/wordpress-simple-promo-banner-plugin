@@ -10,10 +10,36 @@ showResetPreview = () => {
     removeResetPreview() // kill this function once it happens
 }
 
+// function to notify changes
+alertChanges = () => {
+    document.getElementById('message').textContent = 'Unsaved Changes'
+}
+
+// create a helper function that adds delete logic every time a new input is added
+const deleteButtonHelper = uniqueId => {
+    const thisInput = document.querySelector('.inputExclusionContainer.inputExclusion-'+uniqueId);
+    console.log(thisInput);
+    thisInput.parentNode.removeChild(thisInput);
+    alertChanges()
+}
+
+Array.from(document.querySelectorAll('.promo-banner-wrap form input')).forEach(inputEl => {
+    inputEl.addEventListener('change', () => {
+        // document.getElementById('message').textContent = 'Unsaved Changes';
+        alertChanges();
+    })
+})
+
 document.addEventListener("DOMContentLoaded", function() {
-    alertChanges = () => {
-        document.getElementById('message').textContent = 'Unsaved Changes'
-    }
+
+    //get the existing buttons on the page and add delete function
+Array.from(document.getElementsByClassName('exclusion-input-delete-button')).forEach(btn => {
+    btn.addEventListener('click', btnEl => {
+        console.log(btnEl.target.id)
+        deleteButtonHelper(btnEl.target.id);
+    })
+})
+
     removeResetPreview = () => {
         showResetPreview = () => false;
     } 
@@ -66,8 +92,60 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
+    /**
+     * exluded pages js
+    **/
+   // toggle dropdown in case we get really long lists
+    document.querySelector('.banner-exclusions-container-label').addEventListener('click', ()=>{
+        document.querySelector('.banner-exclusions-inner-wrapper').classList.toggle('closed');
+    })
+
+    //create function that generates and returns a new input element
+    const generateInput = () => {
+        let uniqueInputName = Date.now(); // random timestamp so we can figure out what we want to delete later
+
+        // create a container
+        const inputExclusionInputWrapper = document.createElement('div');
+        inputExclusionInputWrapper.classList.add('inputExclusionContainer');
+        inputExclusionInputWrapper.classList.add('inputExclusion-'+uniqueInputName);
+
+        // create the new input
+        const newInput = document.createElement('input');
+        newInput.setAttribute('type', 'text');
+        newInput.setAttribute('required', 'true');
+        newInput.setAttribute('placeholder', 'Page URL equals or contains');
+        newInput.classList.add('large-text');
+        newInput.classList.add('banner-exclusion-url');
+        newInput.setAttribute('name', 'banner-exclusion-url-'+uniqueInputName);
+
+        //create a delete button because you cant put psuedo::after on an input, also IE doesnt support psuedo::after at all... thanks Bill
+        const deleteButton = document.createElement('span');
+        deleteButton.classList.add('exclusion-input-delete-button');
+        deleteButton.addEventListener('click', () => {deleteButtonHelper(uniqueInputName)});
+        // add the delete function defined above
+        deleteButton.innerText = 'Delete';
+
+        // append the newly created input to inputExclusionInputWrapper
+        inputExclusionInputWrapper.appendChild(newInput);
+
+        // append the newly created button to inputExclusionInputWrapper
+        inputExclusionInputWrapper.appendChild(deleteButton);
+
+        // append the inputExclusionInputWrapper to div.exclusions-form-container
+        document.querySelector('.exclusions-form-container').appendChild(inputExclusionInputWrapper);
+        alertChanges();
+    }
+
+    // bring life to the add new button
+    document.getElementById('add-exclusion').addEventListener('click', generateInput)
+
+    /**
+     * end of the exclusions list JS
+     */
+
     // show unsaved changes when  hide/display banner button click
     document.getElementById('hide-promo-banner').addEventListener('change', () => {
-        document.getElementById('message').textContent = 'Unsaved Changes'
+        // document.getElementById('message').textContent = 'Unsaved Changes'
+        alertChanges()
     }, true);
 });
